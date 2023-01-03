@@ -3,6 +3,7 @@ using oee.Captura;
 using oee.Catalogos.Categorias;
 using oee.Catalogos.DescripcionFallas;
 using oee.Catalogos.Turnos;
+using oee.Inventarios;
 using oee.Operacion;
 using oee.Trazabilidad;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
@@ -51,14 +52,15 @@ public class oeeDbContext :
     public DbSet<OrganizationUnit> OrganizationUnits { get; set; }
     public DbSet<IdentitySecurityLog> SecurityLogs { get; set; }
     public DbSet<IdentityLinkUser> LinkUsers { get; set; }
-    public DbSet<DescripcionFalla> DescripcionFallas { get; set; }
-    public DbSet<Categoria> Categorias { get; set; }
-    public DbSet<Turno> Turnos { get; set; }
-  public DbSet<Oee> Oee_Porcentaje { get; set; }
-  public DbSet<TiempoCiclo> TiempoCiclos { get; set; }
-    public DbSet<Corte> Cortes { get; set; }
+    //public DbSet<DescripcionFalla> DescripcionFallas { get; set; }
+    //public DbSet<Categoria> Categorias { get; set; }
+    //public DbSet<Turno> Turnos { get; set; }
+  //public DbSet<Oee> Oee_Porcentaje { get; set; }
+  //public DbSet<TiempoCiclo> TiempoCiclos { get; set; }
+    //public DbSet<Corte> Cortes { get; set; }
   public DbSet<Usuario> Usuarios { get; set; }
-
+    public DbSet<TipoIncidencia> TipoIncidencias { get; set; }
+    public DbSet<Cliente> Clientes { get; set; }
 
 
   // Tenant Management

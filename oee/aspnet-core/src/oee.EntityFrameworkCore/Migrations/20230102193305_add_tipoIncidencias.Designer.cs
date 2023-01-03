@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 using oee.EntityFrameworkCore;
@@ -12,9 +13,10 @@ using oee.EntityFrameworkCore;
 namespace oee.Migrations
 {
     [DbContext(typeof(oeeDbContext))]
-    partial class oeeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230102193305_add_tipoIncidencias")]
+    partial class add_tipoIncidencias
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -23,46 +25,6 @@ namespace oee.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
-
-            modelBuilder.Entity("oee.Inventarios.Cliente", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("CP")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Calle")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Colonia")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Contacto")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Correo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Municipio")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Nombre")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Numero")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Telefono")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("VendedorId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Clientes");
-                });
 
             modelBuilder.Entity("oee.Inventarios.TipoIncidencia", b =>
                 {

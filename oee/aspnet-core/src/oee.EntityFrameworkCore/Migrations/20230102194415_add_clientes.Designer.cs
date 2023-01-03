@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 using oee.EntityFrameworkCore;
@@ -12,9 +13,10 @@ using oee.EntityFrameworkCore;
 namespace oee.Migrations
 {
     [DbContext(typeof(oeeDbContext))]
-    partial class oeeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230102194415_add_clientes")]
+    partial class add_clientes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -55,9 +57,6 @@ namespace oee.Migrations
 
                     b.Property<string>("Telefono")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("VendedorId")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
