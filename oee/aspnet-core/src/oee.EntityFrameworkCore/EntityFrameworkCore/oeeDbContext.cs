@@ -61,6 +61,7 @@ public class oeeDbContext :
   public DbSet<Usuario> Usuarios { get; set; }
     public DbSet<TipoIncidencia> TipoIncidencias { get; set; }
     public DbSet<Cliente> Clientes { get; set; }
+    public DbSet<Producto> Productos { get; set; }
 
 
   // Tenant Management
